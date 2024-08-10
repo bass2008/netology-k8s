@@ -16,26 +16,3 @@ Kubernetes - открытая система оркестрации контей
 # Какие типы нод есть в k8s, каковы их базовые функции?
 Master-ноды: управляют кластером, хранят состояние и принимают решения о планировании.
 Worker-ноды: выполняют рабочие нагрузки, запускают поды с контейнерами.
-
-Manifest:
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: netology-ml
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: netology-ml
-  strategy:
-    type: RollingUpdate
-  template:
-    metadata:
-      labels:
-        app: netology-ml
-    spec:
-      containers:
-      - name: tomcat
-        image: tomcat:8.5.69
-        ports:
-        - containerPort: 8080
